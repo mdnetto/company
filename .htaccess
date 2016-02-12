@@ -1,0 +1,14 @@
+RewriteEngine On
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^.*js(.*\.js) /company/app/assets/javascript$1    [NC,L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^.*css(.*\.css) /company/app/assets/css$1    [NC,L]
+
+# php routes
+RewriteRule   ^employee/([0-9]+)/?$     app/pages/employees.php?id=$1     [NC,L]
+RewriteRule   ^department/([0-9]+)/?$   app/pages/departments.php?id=$1       [NC,L]
+RewriteRule   ^employees                app/pages/employees.php  [NC,L]
+RewriteRule   ^departments              app/pages/departments.php    [NC,L]
+RewriteRule   ^query                    app/pages/query.php    [NC,L]
