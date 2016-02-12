@@ -24,6 +24,8 @@ class DepartmentMapper extends BaseMapper {
               JOIN employees e on dm.emp_no=e.emp_no group by d.dept_no");
         $statement->execute();
         $results = $statement->fetchAll();
+        
+        //call different models and call the data like so $department->name, $employee->firstname
         //$models = [];
         //foreach($results as $result) {
         //    array_push($models, $this->hydrateModel($result));
