@@ -17,9 +17,9 @@ abstract class BaseController {
         $this->render('index.php', $models);
     }
 
-    public function view($id) {
+    public function view($column_name, $id) {
         $mapper = $this->getMapperInstance();
-        $model = $mapper->find($id);
+        $model = $mapper->find($column_name, $id);
         $this->render('view.php', $model);
     }
 
